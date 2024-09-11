@@ -1,0 +1,241 @@
+body {
+    background: linear-gradient(180deg, #3cb371, #77ff00d1) no-repeat center center/cover;
+    text-align: center;
+    min-height: calc(100vh - 0px);
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sensorlebel {
+    text-align: center;
+}
+
+span {
+    padding: 11px 60px 11px 60px;
+    font-size: 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    background: linear-gradient(to right, #31498d, #004d8f);
+    color: white;
+    border: solid 1px;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav img.logo-img {
+    height: 60px;
+    /* Adjust this to control the image size */
+    margin-left: 20px;
+    /* Adjust this for spacing */
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 20px;
+    /* Adjust this for spacing between logo and text */
+    font-weight: bold;
+}
+
+.checkbtn {
+    margin-left: 26px;
+    font-size: 30px;
+    color: white;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 250px;
+    height: 70px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.exit {
+    background-color: #ff4d4d;
+}
+
+.notification {
+    background-color: #ffeb3b;
+    color: black;
+}
+
+.sensors {
+    background-color: #007bff;
+    color: black;
+}
+
+.reports {
+    background-color: #ff7f50;
+}
+
+.logo-mobile img {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 190px;
+}
+
+.logo-img {
+    display: block;
+    position: absolute;
+    right: 30px;
+}
+
+label.logo {
+    font-size: 30px;
+    position: absolute;
+    right: 76px;
+    color: black;
+}
+
+.button {
+    width: 250px;
+    height: 70px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.button {
+    font-weight: 800;
+    width: 206px;
+    height: 46px;
+    padding: 10px;
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 23px;
+}
+
+.button img {
+    height: 72px;
+    width: auto;
+    position: absolute;
+    margin-left: -121px;
+    border-radius: 18px;
+    border: solid 2px;
+    margin-right: 115px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 195px;
+}
+
+.button-container a {
+    margin-left: 74px;
+}
+
+.sensor-container {
+    margin-top: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sensor-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Arrange sensor-box and sensor-label in a column */
+    flex: 1;
+}
+
+.sensor-box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+}
+
+.sensor-label {
+    text-align: center;
+    margin-top: 10px;
+    /* Space between box and label */
+    font-size: 14px;
+    color: #333;
+}
+
+.sensor-label span {
+    display: block;
+    font-weight: bold;
+}
+
+.tds_text {
+    background: linear-gradient(to right, #dafd00, #ed5800) !important;
+    color: black !important;
+}
+
+.ph_text {
+    background: linear-gradient(to right, #ff69b7, #db1300) !important;
+    color: black !important;
+}
+
+.water_text {
+    background: linear-gradient(to right, #00defd, #cfcfff) !important;
+    color: black !important;
+}
+
+.temp_text {
+    background: linear-gradient(to right, #e0f0ff, #2525ff) !important;
+    color: black !important;
+}
+
+.center_gauge {
+    margin-left: 20px;
+    margin-right: 20px;
+}
