@@ -16,6 +16,7 @@ ob_start(); // Start output buffering
     <div class="label center">
         <span>Level 0</span>
     </div>
+    <p class="normal_label">Note: Water level will only notify when reach the rising level of 100% this will closely over flowing pond.</p>
 </div>
 
 <script type="module" src="../../js/client/water_level.js"></script>

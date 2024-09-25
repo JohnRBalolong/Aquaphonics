@@ -16,6 +16,7 @@ ob_start(); // Start output buffering
     <div class="templabel center">
         <span>Level 0</span>
     </div>
+    <p class="normal_label">Note: Fresh water fish needs Temperature normal level of 24°C to 32°C (degrees Celsius)</p>
 </div>
 
 <script type="module" src="../../js/client/temperature_level.js"></script>

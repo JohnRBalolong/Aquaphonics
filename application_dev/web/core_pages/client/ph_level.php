@@ -16,6 +16,7 @@ ob_start(); // Start output buffering
     <div class="phlabel center">
         <span class="phlavel">Level 0</span>
     </div>
+    <p class="normal_label">Note: Fresh water fish needs PH normal level of 6.5pH to 8.5pH (potential of hydrogen)</p>
 </div>
 <!-- Pass PHP variable to JavaScript -->
 

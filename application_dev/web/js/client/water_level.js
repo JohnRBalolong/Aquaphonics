@@ -35,22 +35,22 @@ function updateGauge(value) {
     let gradient;
 
     if (value <= 25) { // 0% to 25%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = -100 + (value / 25) * 40; // Range: -100deg to -60deg
     } else if (value <= 35) { // 25% to 35%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = -60 + ((value - 25) / 10) * 20; // Range: -60deg to -40deg
     } else if (value <= 50) { // 35% to 50%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = -40 + ((value - 35) / 15) * 40; // Range: -40deg to 0deg
     } else if (value <= 65) { // 50% to 65%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = 0 + ((value - 50) / 15) * 40; // Range: 0deg to 40deg
     } else if (value <= 85) { // 65% to 85%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = 40 + ((value - 65) / 20) * 40; // Range: 40deg to 80deg
     } else { // 85% to 100%
-        gradient = "linear-gradient(to right, rgb(247, 33, 33) -1%, rgb(231, 94, 26) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
+        gradient = "linear-gradient(to right, rgb(11 249 0) -1%, rgb(11 249 0) 14%, rgb(11 249 0) 30%, rgb(11 249 0) 71%, rgb(255, 96, 0) 86%, rgb(253, 24, 24) 100%)";
         angle = 80 + ((value - 85) / 15) * 20; // Range: 80deg to 100deg
     }
 
@@ -65,17 +65,13 @@ function analyzeWaterLevelReadings() {
     if (lastWaterLevelReadings.length >= 10) {
         let stable = true;
 
-        // Analyze each water level reading
-        for (let i = 0; i < lastWaterLevelReadings.length; i++) {
-            const currentWaterLevel = lastWaterLevelReadings[i];
+        // Analyze the most recent water level reading
+        const currentWaterLevel = lastWaterLevelReadings[lastWaterLevelReadings.length - 1];
 
-            if (currentWaterLevel < 40) {
-                sendNotification("waterlevel", currentWaterLevel, "Water level being low, can cause low oxygen level, monitor water level.");
-                stable = false;
-            } else if (currentWaterLevel >= 80 && currentWaterLevel <= 100) {
-                sendNotification("waterlevel", currentWaterLevel, "Water level rising high.");
-                stable = false;
-            }
+        // Only send a notification when the current water level is 100
+        if (currentWaterLevel === 100) {
+            sendNotification("waterlevel", currentWaterLevel, "Water level rising high, monitor closely.");
+            stable = false;
         }
 
         // If stable, you can log it or do other tasks
@@ -87,6 +83,7 @@ function analyzeWaterLevelReadings() {
         lastWaterLevelReadings = [];
     }
 }
+
 
 // Function to send a notification
 function sendNotification(sensorType, value, message) {
